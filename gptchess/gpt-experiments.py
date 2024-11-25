@@ -177,7 +177,7 @@ def play_game(chess_config: ChessEngineConfig, gpt_config: GPTConfig, base_pgn=B
     
 
     # stockfish = Stockfish("./stockfish/stockfish/stockfish-ubuntu-x86-64-avx2", depth=engine_depth)
-    stockfish = Stockfish("./stockfish/stockfish/stockfish-ubuntu-x86-64-avx2", depth=engine_depth) # , depth=engine_depth) "/home/mathieuacher/Downloads/Enko/EnkoChess_290818") # 
+    stockfish = Stockfish("./stockfish/stockfish-ubuntu-x86-64-avx2", depth=engine_depth) # , depth=engine_depth) "/home/mathieuacher/Downloads/Enko/EnkoChess_290818") # 
     # stockfish.set_elo_rating(engine_elo)
     stockfish.set_skill_level(skill_level)
     

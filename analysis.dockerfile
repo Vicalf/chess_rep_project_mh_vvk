@@ -1,5 +1,4 @@
-FROM python:3.11-buster
+FROM project_repro
 WORKDIR /app
 COPY . /app
-RUN pip install -r gptchess/requirements.txt
 CMD jupyter nbconvert analysis.ipynb --execute --to markdown
