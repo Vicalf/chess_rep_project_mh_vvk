@@ -1,0 +1,225 @@
+It is your turn! You have white pieces. Please complete the chess game using PGN notation. 1. e4
+It is your turn! You have white pieces. Please complete the chess game using PGN notation. 1. e4 e6
+[{'role': 'system', 'content': "You are a professional, top international grand-master chess player. We are playing a serious chess game, using PGN notation. When it's your turn, you have to play your move using PGN notation."}, {'role': 'assistant', 'content': '1. e4'}, {'role': 'user', 'content': '1... e6'}]
+SAN MOVE: 2. d4 d4
++---+---+---+---+---+---+---+---+
+| r | n | b | q | k | b | n | r | 8
++---+---+---+---+---+---+---+---+
+| p | p | p | p |   | p | p | p | 7
++---+---+---+---+---+---+---+---+
+|   |   |   |   | p |   |   |   | 6
++---+---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |   | 5
++---+---+---+---+---+---+---+---+
+|   |   |   | P | P |   |   |   | 4
++---+---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |   | 3
++---+---+---+---+---+---+---+---+
+| P | P | P |   |   | P | P | P | 2
++---+---+---+---+---+---+---+---+
+| R | N | B | Q | K | B | N | R | 1
++---+---+---+---+---+---+---+---+
+  a   b   c   d   e   f   g   h
+
+It is your turn! You have white pieces. Please complete the chess game using PGN notation. 1. e4 e6 2. d4 Bc5
+[{'role': 'system', 'content': "You are a professional, top international grand-master chess player. We are playing a serious chess game, using PGN notation. When it's your turn, you have to play your move using PGN notation."}, {'role': 'assistant', 'content': '1. e4'}, {'role': 'user', 'content': '1... e6'}, {'role': 'assistant', 'content': '2. d4'}, {'role': 'user', 'content': '2... Bc5'}]
+SAN MOVE: 3. dxc5 dxc5
++---+---+---+---+---+---+---+---+
+| r | n | b | q | k |   | n | r | 8
++---+---+---+---+---+---+---+---+
+| p | p | p | p |   | p | p | p | 7
++---+---+---+---+---+---+---+---+
+|   |   |   |   | p |   |   |   | 6
++---+---+---+---+---+---+---+---+
+|   |   | P |   |   |   |   |   | 5
++---+---+---+---+---+---+---+---+
+|   |   |   |   | P |   |   |   | 4
++---+---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |   | 3
++---+---+---+---+---+---+---+---+
+| P | P | P |   |   | P | P | P | 2
++---+---+---+---+---+---+---+---+
+| R | N | B | Q | K | B | N | R | 1
++---+---+---+---+---+---+---+---+
+  a   b   c   d   e   f   g   h
+
+It is your turn! You have white pieces. Please complete the chess game using PGN notation. 1. e4 e6 2. d4 Bc5 3. dxc5 Qe7
+[{'role': 'system', 'content': "You are a professional, top international grand-master chess player. We are playing a serious chess game, using PGN notation. When it's your turn, you have to play your move using PGN notation."}, {'role': 'assistant', 'content': '1. e4'}, {'role': 'user', 'content': '1... e6'}, {'role': 'assistant', 'content': '2. d4'}, {'role': 'user', 'content': '2... Bc5'}, {'role': 'assistant', 'content': '3. dxc5'}, {'role': 'user', 'content': '3... Qe7'}]
+SAN MOVE: 4. Be3 Be3
++---+---+---+---+---+---+---+---+
+| r | n | b |   | k |   | n | r | 8
++---+---+---+---+---+---+---+---+
+| p | p | p | p | q | p | p | p | 7
++---+---+---+---+---+---+---+---+
+|   |   |   |   | p |   |   |   | 6
++---+---+---+---+---+---+---+---+
+|   |   | P |   |   |   |   |   | 5
++---+---+---+---+---+---+---+---+
+|   |   |   |   | P |   |   |   | 4
++---+---+---+---+---+---+---+---+
+|   |   |   |   | B |   |   |   | 3
++---+---+---+---+---+---+---+---+
+| P | P | P |   |   | P | P | P | 2
++---+---+---+---+---+---+---+---+
+| R | N |   | Q | K | B | N | R | 1
++---+---+---+---+---+---+---+---+
+  a   b   c   d   e   f   g   h
+
+It is your turn! You have white pieces. Please complete the chess game using PGN notation. 1. e4 e6 2. d4 Bc5 3. dxc5 Qe7 4. Be3 Qh4
+[{'role': 'system', 'content': "You are a professional, top international grand-master chess player. We are playing a serious chess game, using PGN notation. When it's your turn, you have to play your move using PGN notation."}, {'role': 'assistant', 'content': '1. e4'}, {'role': 'user', 'content': '1... e6'}, {'role': 'assistant', 'content': '2. d4'}, {'role': 'user', 'content': '2... Bc5'}, {'role': 'assistant', 'content': '3. dxc5'}, {'role': 'user', 'content': '3... Qe7'}, {'role': 'assistant', 'content': '4. Be3'}, {'role': 'user', 'content': '4... Qh4'}]
+SAN MOVE: 5. Nf3 Nf3
++---+---+---+---+---+---+---+---+
+| r | n | b |   | k |   | n | r | 8
++---+---+---+---+---+---+---+---+
+| p | p | p | p |   | p | p | p | 7
++---+---+---+---+---+---+---+---+
+|   |   |   |   | p |   |   |   | 6
++---+---+---+---+---+---+---+---+
+|   |   | P |   |   |   |   |   | 5
++---+---+---+---+---+---+---+---+
+|   |   |   |   | P |   |   | q | 4
++---+---+---+---+---+---+---+---+
+|   |   |   |   | B | N |   |   | 3
++---+---+---+---+---+---+---+---+
+| P | P | P |   |   | P | P | P | 2
++---+---+---+---+---+---+---+---+
+| R | N |   | Q | K | B |   | R | 1
++---+---+---+---+---+---+---+---+
+  a   b   c   d   e   f   g   h
+
+It is your turn! You have white pieces. Please complete the chess game using PGN notation. 1. e4 e6 2. d4 Bc5 3. dxc5 Qe7 4. Be3 Qh4 5. Nf3 f5
+[{'role': 'system', 'content': "You are a professional, top international grand-master chess player. We are playing a serious chess game, using PGN notation. When it's your turn, you have to play your move using PGN notation."}, {'role': 'assistant', 'content': '1. e4'}, {'role': 'user', 'content': '1... e6'}, {'role': 'assistant', 'content': '2. d4'}, {'role': 'user', 'content': '2... Bc5'}, {'role': 'assistant', 'content': '3. dxc5'}, {'role': 'user', 'content': '3... Qe7'}, {'role': 'assistant', 'content': '4. Be3'}, {'role': 'user', 'content': '4... Qh4'}, {'role': 'assistant', 'content': '5. Nf3'}, {'role': 'user', 'content': '5... f5'}]
+SAN MOVE: 6. exf5 exf5
++---+---+---+---+---+---+---+---+
+| r | n | b |   | k |   | n | r | 8
++---+---+---+---+---+---+---+---+
+| p | p | p | p |   |   | p | p | 7
++---+---+---+---+---+---+---+---+
+|   |   |   |   | p |   |   |   | 6
++---+---+---+---+---+---+---+---+
+|   |   | P |   |   | P |   |   | 5
++---+---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   | q | 4
++---+---+---+---+---+---+---+---+
+|   |   |   |   | B | N |   |   | 3
++---+---+---+---+---+---+---+---+
+| P | P | P |   |   | P | P | P | 2
++---+---+---+---+---+---+---+---+
+| R | N |   | Q | K | B |   | R | 1
++---+---+---+---+---+---+---+---+
+  a   b   c   d   e   f   g   h
+
+It is your turn! You have white pieces. Please complete the chess game using PGN notation. 1. e4 e6 2. d4 Bc5 3. dxc5 Qe7 4. Be3 Qh4 5. Nf3 f5 6. exf5 a5
+[{'role': 'system', 'content': "You are a professional, top international grand-master chess player. We are playing a serious chess game, using PGN notation. When it's your turn, you have to play your move using PGN notation."}, {'role': 'assistant', 'content': '1. e4'}, {'role': 'user', 'content': '1... e6'}, {'role': 'assistant', 'content': '2. d4'}, {'role': 'user', 'content': '2... Bc5'}, {'role': 'assistant', 'content': '3. dxc5'}, {'role': 'user', 'content': '3... Qe7'}, {'role': 'assistant', 'content': '4. Be3'}, {'role': 'user', 'content': '4... Qh4'}, {'role': 'assistant', 'content': '5. Nf3'}, {'role': 'user', 'content': '5... f5'}, {'role': 'assistant', 'content': '6. exf5'}, {'role': 'user', 'content': '6... a5'}]
+SAN MOVE: 7. Nc3 Nc3
++---+---+---+---+---+---+---+---+
+| r | n | b |   | k |   | n | r | 8
++---+---+---+---+---+---+---+---+
+|   | p | p | p |   |   | p | p | 7
++---+---+---+---+---+---+---+---+
+|   |   |   |   | p |   |   |   | 6
++---+---+---+---+---+---+---+---+
+| p |   | P |   |   | P |   |   | 5
++---+---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   | q | 4
++---+---+---+---+---+---+---+---+
+|   |   | N |   | B | N |   |   | 3
++---+---+---+---+---+---+---+---+
+| P | P | P |   |   | P | P | P | 2
++---+---+---+---+---+---+---+---+
+| R |   |   | Q | K | B |   | R | 1
++---+---+---+---+---+---+---+---+
+  a   b   c   d   e   f   g   h
+
+It is your turn! You have white pieces. Please complete the chess game using PGN notation. 1. e4 e6 2. d4 Bc5 3. dxc5 Qe7 4. Be3 Qh4 5. Nf3 f5 6. exf5 a5 7. Nc3 b6
+[{'role': 'system', 'content': "You are a professional, top international grand-master chess player. We are playing a serious chess game, using PGN notation. When it's your turn, you have to play your move using PGN notation."}, {'role': 'assistant', 'content': '1. e4'}, {'role': 'user', 'content': '1... e6'}, {'role': 'assistant', 'content': '2. d4'}, {'role': 'user', 'content': '2... Bc5'}, {'role': 'assistant', 'content': '3. dxc5'}, {'role': 'user', 'content': '3... Qe7'}, {'role': 'assistant', 'content': '4. Be3'}, {'role': 'user', 'content': '4... Qh4'}, {'role': 'assistant', 'content': '5. Nf3'}, {'role': 'user', 'content': '5... f5'}, {'role': 'assistant', 'content': '6. exf5'}, {'role': 'user', 'content': '6... a5'}, {'role': 'assistant', 'content': '7. Nc3'}, {'role': 'user', 'content': '7... b6'}]
+SAN MOVE: 8. cxb6 cxb6
++---+---+---+---+---+---+---+---+
+| r | n | b |   | k |   | n | r | 8
++---+---+---+---+---+---+---+---+
+|   |   | p | p |   |   | p | p | 7
++---+---+---+---+---+---+---+---+
+|   | P |   |   | p |   |   |   | 6
++---+---+---+---+---+---+---+---+
+| p |   |   |   |   | P |   |   | 5
++---+---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   | q | 4
++---+---+---+---+---+---+---+---+
+|   |   | N |   | B | N |   |   | 3
++---+---+---+---+---+---+---+---+
+| P | P | P |   |   | P | P | P | 2
++---+---+---+---+---+---+---+---+
+| R |   |   | Q | K | B |   | R | 1
++---+---+---+---+---+---+---+---+
+  a   b   c   d   e   f   g   h
+
+It is your turn! You have white pieces. Please complete the chess game using PGN notation. 1. e4 e6 2. d4 Bc5 3. dxc5 Qe7 4. Be3 Qh4 5. Nf3 f5 6. exf5 a5 7. Nc3 b6 8. cxb6 c5
+[{'role': 'system', 'content': "You are a professional, top international grand-master chess player. We are playing a serious chess game, using PGN notation. When it's your turn, you have to play your move using PGN notation."}, {'role': 'assistant', 'content': '1. e4'}, {'role': 'user', 'content': '1... e6'}, {'role': 'assistant', 'content': '2. d4'}, {'role': 'user', 'content': '2... Bc5'}, {'role': 'assistant', 'content': '3. dxc5'}, {'role': 'user', 'content': '3... Qe7'}, {'role': 'assistant', 'content': '4. Be3'}, {'role': 'user', 'content': '4... Qh4'}, {'role': 'assistant', 'content': '5. Nf3'}, {'role': 'user', 'content': '5... f5'}, {'role': 'assistant', 'content': '6. exf5'}, {'role': 'user', 'content': '6... a5'}, {'role': 'assistant', 'content': '7. Nc3'}, {'role': 'user', 'content': '7... b6'}, {'role': 'assistant', 'content': '8. cxb6'}, {'role': 'user', 'content': '8... c5'}]
+SAN MOVE: 9. Bxc5 Bxc5
++---+---+---+---+---+---+---+---+
+| r | n | b |   | k |   | n | r | 8
++---+---+---+---+---+---+---+---+
+|   |   |   | p |   |   | p | p | 7
++---+---+---+---+---+---+---+---+
+|   | P |   |   | p |   |   |   | 6
++---+---+---+---+---+---+---+---+
+| p |   | B |   |   | P |   |   | 5
++---+---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   | q | 4
++---+---+---+---+---+---+---+---+
+|   |   | N |   |   | N |   |   | 3
++---+---+---+---+---+---+---+---+
+| P | P | P |   |   | P | P | P | 2
++---+---+---+---+---+---+---+---+
+| R |   |   | Q | K | B |   | R | 1
++---+---+---+---+---+---+---+---+
+  a   b   c   d   e   f   g   h
+
+It is your turn! You have white pieces. Please complete the chess game using PGN notation. 1. e4 e6 2. d4 Bc5 3. dxc5 Qe7 4. Be3 Qh4 5. Nf3 f5 6. exf5 a5 7. Nc3 b6 8. cxb6 c5 9. Bxc5 Qf6
+[{'role': 'system', 'content': "You are a professional, top international grand-master chess player. We are playing a serious chess game, using PGN notation. When it's your turn, you have to play your move using PGN notation."}, {'role': 'assistant', 'content': '1. e4'}, {'role': 'user', 'content': '1... e6'}, {'role': 'assistant', 'content': '2. d4'}, {'role': 'user', 'content': '2... Bc5'}, {'role': 'assistant', 'content': '3. dxc5'}, {'role': 'user', 'content': '3... Qe7'}, {'role': 'assistant', 'content': '4. Be3'}, {'role': 'user', 'content': '4... Qh4'}, {'role': 'assistant', 'content': '5. Nf3'}, {'role': 'user', 'content': '5... f5'}, {'role': 'assistant', 'content': '6. exf5'}, {'role': 'user', 'content': '6... a5'}, {'role': 'assistant', 'content': '7. Nc3'}, {'role': 'user', 'content': '7... b6'}, {'role': 'assistant', 'content': '8. cxb6'}, {'role': 'user', 'content': '8... c5'}, {'role': 'assistant', 'content': '9. Bxc5'}, {'role': 'user', 'content': '9... Qf6'}]
+SAN MOVE: 10. Bd4 Bd4
++---+---+---+---+---+---+---+---+
+| r | n | b |   | k |   | n | r | 8
++---+---+---+---+---+---+---+---+
+|   |   |   | p |   |   | p | p | 7
++---+---+---+---+---+---+---+---+
+|   | P |   |   | p | q |   |   | 6
++---+---+---+---+---+---+---+---+
+| p |   |   |   |   | P |   |   | 5
++---+---+---+---+---+---+---+---+
+|   |   |   | B |   |   |   |   | 4
++---+---+---+---+---+---+---+---+
+|   |   | N |   |   | N |   |   | 3
++---+---+---+---+---+---+---+---+
+| P | P | P |   |   | P | P | P | 2
++---+---+---+---+---+---+---+---+
+| R |   |   | Q | K | B |   | R | 1
++---+---+---+---+---+---+---+---+
+  a   b   c   d   e   f   g   h
+
+It is your turn! You have white pieces. Please complete the chess game using PGN notation. 1. e4 e6 2. d4 Bc5 3. dxc5 Qe7 4. Be3 Qh4 5. Nf3 f5 6. exf5 a5 7. Nc3 b6 8. cxb6 c5 9. Bxc5 Qf6 10. Bd4 Nh6
+[{'role': 'system', 'content': "You are a professional, top international grand-master chess player. We are playing a serious chess game, using PGN notation. When it's your turn, you have to play your move using PGN notation."}, {'role': 'assistant', 'content': '1. e4'}, {'role': 'user', 'content': '1... e6'}, {'role': 'assistant', 'content': '2. d4'}, {'role': 'user', 'content': '2... Bc5'}, {'role': 'assistant', 'content': '3. dxc5'}, {'role': 'user', 'content': '3... Qe7'}, {'role': 'assistant', 'content': '4. Be3'}, {'role': 'user', 'content': '4... Qh4'}, {'role': 'assistant', 'content': '5. Nf3'}, {'role': 'user', 'content': '5... f5'}, {'role': 'assistant', 'content': '6. exf5'}, {'role': 'user', 'content': '6... a5'}, {'role': 'assistant', 'content': '7. Nc3'}, {'role': 'user', 'content': '7... b6'}, {'role': 'assistant', 'content': '8. cxb6'}, {'role': 'user', 'content': '8... c5'}, {'role': 'assistant', 'content': '9. Bxc5'}, {'role': 'user', 'content': '9... Qf6'}, {'role': 'assistant', 'content': '10. Bd4'}, {'role': 'user', 'content': '10... Nh6'}]
+SAN MOVE: 11. Bxf6 Bxf6
++---+---+---+---+---+---+---+---+
+| r | n | b |   | k |   |   | r | 8
++---+---+---+---+---+---+---+---+
+|   |   |   | p |   |   | p | p | 7
++---+---+---+---+---+---+---+---+
+|   | P |   |   | p | B |   | n | 6
++---+---+---+---+---+---+---+---+
+| p |   |   |   |   | P |   |   | 5
++---+---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |   | 4
++---+---+---+---+---+---+---+---+
+|   |   | N |   |   | N |   |   | 3
++---+---+---+---+---+---+---+---+
+| P | P | P |   |   | P | P | P | 2
++---+---+---+---+---+---+---+---+
+| R |   |   | Q | K | B |   | R | 1
++---+---+---+---+---+---+---+---+
+  a   b   c   d   e   f   g   h
+
+It is your turn! You have white pieces. Please complete the chess game using PGN notation. 1. e4 e6 2. d4 Bc5 3. dxc5 Qe7 4. Be3 Qh4 5. Nf3 f5 6. exf5 a5 7. Nc3 b6 8. cxb6 c5 9. Bxc5 Qf6 10. Bd4 Nh6 11. Bxf6 O-O
+[{'role': 'system', 'content': "You are a professional, top international grand-master chess player. We are playing a serious chess game, using PGN notation. When it's your turn, you have to play your move using PGN notation."}, {'role': 'assistant', 'content': '1. e4'}, {'role': 'user', 'content': '1... e6'}, {'role': 'assistant', 'content': '2. d4'}, {'role': 'user', 'content': '2... Bc5'}, {'role': 'assistant', 'content': '3. dxc5'}, {'role': 'user', 'content': '3... Qe7'}, {'role': 'assistant', 'content': '4. Be3'}, {'role': 'user', 'content': '4... Qh4'}, {'role': 'assistant', 'content': '5. Nf3'}, {'role': 'user', 'content': '5... f5'}, {'role': 'assistant', 'content': '6. exf5'}, {'role': 'user', 'content': '6... a5'}, {'role': 'assistant', 'content': '7. Nc3'}, {'role': 'user', 'content': '7... b6'}, {'role': 'assistant', 'content': '8. cxb6'}, {'role': 'user', 'content': '8... c5'}, {'role': 'assistant', 'content': '9. Bxc5'}, {'role': 'user', 'content': '9... Qf6'}, {'role': 'assistant', 'content': '10. Bd4'}, {'role': 'user', 'content': '10... Nh6'}, {'role': 'assistant', 'content': '11. Bxf6'}, {'role': 'user', 'content': '11... O-O'}]
+SAN MOVE: 12. fxg7 fxg7
+unknown san: fxg7

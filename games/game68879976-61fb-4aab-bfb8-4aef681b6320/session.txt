@@ -1,0 +1,28 @@
+PROMPT: It is your turn! You have white pieces. Please complete the chess game using PGN notation. 1. a3
+RESPONSE: 1... e5
+
+PROMPT: It is your turn! You have white pieces. Please complete the chess game using PGN notation. 1. a3 e5 2. c3
+RESPONSE: 2... d5
+
+PROMPT: It is your turn! You have white pieces. Please complete the chess game using PGN notation. 1. a3 e5 2. c3 d5 3. Nf3
+RESPONSE: 3... Nc6
+
+PROMPT: It is your turn! You have white pieces. Please complete the chess game using PGN notation. 1. a3 e5 2. c3 d5 3. Nf3 Nc6 4. e4
+RESPONSE: 4... dxe4
+
+
+PROMPT: It is your turn! You have white pieces. Please complete the chess game using PGN notation. 1. a3 e5 2. c3 d5 3. Nf3 Nc6 4. e4 dxe4 5. h4
+RESPONSE: 5... exf3
+
+PROMPT: It is your turn! You have white pieces. Please complete the chess game using PGN notation. 1. a3 e5 2. c3 d5 3. Nf3 Nc6 4. e4 dxe4 5. h4 exf3 6. Rh3
+RESPONSE: 6... Bxh3
+
+PROMPT: It is your turn! You have white pieces. Please complete the chess game using PGN notation. 1. a3 e5 2. c3 d5 3. Nf3 Nc6 4. e4 dxe4 5. h4 exf3 6. Rh3 Bxh3 7. Be2
+RESPONSE: 7... fxg2
+
+PROMPT: It is your turn! You have white pieces. Please complete the chess game using PGN notation. 1. a3 e5 2. c3 d5 3. Nf3 Nc6 4. e4 dxe4 5. h4 exf3 6. Rh3 Bxh3 7. Be2 fxg2 8. h5
+RESPONSE: 8... g1=Q
+
+PROMPT: It is your turn! You have white pieces. Please complete the chess game using PGN notation. 1. a3 e5 2. c3 d5 3. Nf3 Nc6 4. e4 dxe4 5. h4 exf3 6. Rh3 Bxh3 7. Be2 fxg2 8. h5 g1=Q 9. Bf1
+RESPONSE: 9... Qxf1#
+

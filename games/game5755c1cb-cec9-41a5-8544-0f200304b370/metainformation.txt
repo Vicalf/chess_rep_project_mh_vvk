@@ -1,0 +1,13 @@
+model_gpt: gpt-4
+skill level: 4
+random_engine: False
+white_piece: True
+engine_depth: 15
+engine_time: None
+base_pgn: It is your turn! You have white pieces. Please complete the chess game using PGN notation. 1.
+nmove: 1
+engine_parameters: {'Debug Log File': '', 'Contempt': 0, 'Min Split Depth': 0, 'Ponder': 'false', 'MultiPV': 1, 'Skill Level': 4, 'Move Overhead': 10, 'Minimum Thinking Time': 20, 'Slow Mover': 100, 'UCI_Chess960': 'false', 'UCI_LimitStrength': 'false', 'UCI_Elo': 1350, 'Threads': 1, 'Hash': 16}
+temperature: 0.0
+max_tokens: 6
+chat_gpt: True
+system_role_message: You are a professional, top international grand-master chess player. We are playing a serious chess game, using PGN notation. When it's your turn, you have to play your move using PGN notation.

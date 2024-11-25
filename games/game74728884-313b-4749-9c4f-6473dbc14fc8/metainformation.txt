@@ -1,0 +1,21 @@
+model_gpt: gpt-3.5-turbo-instruct
+skill level: 5
+random_engine: False
+white_piece: False
+engine_depth: 15
+engine_time: None
+base_pgn: [Event "Chess tournament"]
+[Site "Rennes FRA"]
+[Date "2023.12.09"]
+[Round "7"]
+[White "MVL, Magnus"]
+[Black "Ivanchuk, Ian"]
+[Result "1-0"]
+[WhiteElo "2737"]
+[BlackElo "2612"]
+
+1.
+nmove: 1
+engine_parameters: {'Debug Log File': '', 'Contempt': 0, 'Min Split Depth': 0, 'Ponder': 'false', 'MultiPV': 1, 'Skill Level': 5, 'Move Overhead': 10, 'Minimum Thinking Time': 20, 'Slow Mover': 100, 'UCI_Chess960': 'false', 'UCI_LimitStrength': 'false', 'UCI_Elo': 1350, 'Threads': 1, 'Hash': 16}
+temperature: 0.0
+max_tokens: 4
