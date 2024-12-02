@@ -3,7 +3,7 @@
 
 ## Introduction
 
-
+TODO
 
 ## Reproducibility
 
@@ -26,9 +26,9 @@ We wrote the list of requirements in `requirmements.txt` :
    ```
 OpenAI, Chess, Stockfish, Numpy, Pandas and MatPlotLib were required in the README of the original work of Mathieu Acher.
    
-However, the Tabulate, Seaborn et Scipy were missing in the requirements but necessary to execute the program. So that we added these to our requirements file.
+However, Tabulate, Seaborn et Scipy were missing in the requirements but necessary to execute the program. So that we added these to our requirements file.
 
-Jupyter was also needed to execute the analysis notebooks.
+Jupyter was also needed to execute the analysis notebooks and converting it into a markdown file.
 
 Finally, the libraries version were not specified in the requirements list. The fact is that the lasts versions of numpy and pandas have deleted methods used for the analysis. 2 solutions were possible :
    - Change the source code by replacing deprecated and deleted methods by their substitute ;
@@ -51,9 +51,6 @@ There wasn't specific system requirements.
      ```
    - Mention Jupyter notebooks (if applicable):  
      Open `notebooks/reproduce_results.ipynb` to execute the analysis step-by-step.
-
-4. **Automation (Bonus)**  
-   - Explain the included GitHub Action that produces or analyzes data automatically.  
     
 ### Encountered Issues and Improvements
 - Report any challenges, errors, or deviations from the original study.
