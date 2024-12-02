@@ -3,7 +3,7 @@
 
 ## Introduction
 
-TODO
+
 
 ## Reproducibility
 
@@ -40,31 +40,29 @@ There wasn't specific system requirements.
 
 2. **Setting Up the Environment**  
    - Provide instructions for using the Dockerfile to create a reproducible environment:  
-     ```bash     docker build -t reproducible-project .
-     docker run -it reproducible-project
+     ```bash     docker build . -t project_repro ./base.Dockerfile
+     docker build . -t databuild ./databuild.Dockerfile
+     docker build . -t analysis ./analysis.Dockerfile
      ```
 
 3. **Reproducing Results**  
    - Describe how to run the automated scripts or notebooks to reproduce data and analyze results:
      ```bash
-     bash scripts/run_analysis.sh
+     docker run databuild -e "OPENAI_API_KEY=###HERE THE SECRET###"
+     docker run analysis
      ```
-   - Mention Jupyter notebooks (if applicable):  
-     Open `notebooks/reproduce_results.ipynb` to execute the analysis step-by-step.
     
 ### Encountered Issues and Improvements
-- Report any challenges, errors, or deviations from the original study.
-- Describe how these issues were resolved or improved, if applicable.
+- Only part of the dependency were noted, and we thus needed to install more libs, and to downgrade some of them
+- The selection of the right docker image was not easy, because the python image was not able to use apt and to install certain packages
 
 ### Is the Original Study Reproducible?
-- Summarize the success or failure of reproducing the study.
-- Include supporting evidence, such as comparison tables, plots, or metrics.
+- The original study seems to be reproductible
 
 ## Replicability
 
 ### Variability Factors
-- **List of Factors**: Identify all potential sources of variability (e.g., dataset splits, random seeds, hardware).  
-  Example table:
+- **List of Factors**: We identify the factor of variability described here : 
   | Variability Factor | Possible Values     | Relevance                                   |
   |--------------------|---------------------|--------------------------------------------|
   | Random Seed        | [0, 42, 123]       | Impacts consistency of random processes    |
