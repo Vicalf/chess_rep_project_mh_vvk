@@ -43,7 +43,7 @@ BASE_PGN = """[Event "FIDE World Championship Match 2024"]
 
 
 def setup_directory():
-    OUTPUT_DIR = "games_yosha/"
+    OUTPUT_DIR = "games/"
     dir_name = OUTPUT_DIR + "game" + str(uuid.uuid4())
     os.makedirs(dir_name, exist_ok=True)
     return dir_name
@@ -498,7 +498,17 @@ YOSHA_PGN = """[White "Carlsen, Magnus"]
 
 
 # Call the refactored function.
-play_game(chess_config, gpt_config, base_pgn=YOSHA_PGN, nmove=1, white_piece=False)
+for t in [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0]:
+    for i in range(1):
+        print("t = "+str(t))
+        gpt_config = GPTConfig(
+            model_gpt="gpt-3.5-turbo-instruct",
+            temperature=t,
+            max_tokens=5,
+            chat_gpt=False,
+            system_role_message=None  # Since it wasn't provided in the original call
+        )
+        play_game(chess_config, gpt_config, base_pgn=BASE_PGN, nmove=1, white_piece=False)
 
 
 #

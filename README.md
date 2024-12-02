@@ -63,21 +63,27 @@ There wasn't specific system requirements.
 
 ### Variability Factors
 - **List of Factors**: We identify the factor of variability described here : 
-  | Variability Factor | Possible Values     | Relevance                                   |
-  |--------------------|---------------------|--------------------------------------------|
-  | Random Seed        | [0, 42, 123]       | Impacts consistency of random processes    |
-  | Hardware           | CPU, GPU (NVIDIA)  | May affect computation time and results    |
-  | Dataset Version    | v1.0, v1.1         | Ensures comparability across experiments   |
+  | Variability Factor | Possible Values        | Relevance                                             |
+  |--------------------|---------------------   |-------------------------------------------------------|
+  | LLM family         | [gpt, llama, mistral]  | May change the training process                       |
+  | LLM version        | depends on family      | May change the training process                       |
+  | input formulation  | TBD                    | May change the way of understanding question for LLM  |
+  | color played       | [white, black]         | May change the ELO computed                           |
+  | ELO prompted LLM   | [800 -> 1500]          | May change the power of the model                     |
+  | ELO prompted other | [800 -> 1500]          | May make the battle harder                            |
+  | player name prompted| ["", famous chess player, random] | may change the perception of the adversary and of itself |
+  | winner prompted     | ["0-1","1-0","1-1"]    | May change the way of playing                         |
+  | chess engine       | Stockfish, AlphaZero, Komodo Chess  | May not play the same move, and trigger different reactions |
+  | temperature        | [0 -> 1 ]             | May enable more illegal moves                          |
+  We think that each of these factor can then affect the computation of the ELO value.
 
 - **Constraints Across Factors**:  
-  - Document any constraints or interdependencies among variability factors.  
-    For example:
-    - Random Seed must align with dataset splits for consistent results.
-    - Hardware constraints may limit the choice of GPU-based factors.
+  - Some factors are linked together
+    - temparature, and LLM version are linked in their meaning to the LLM family.
+    - multiple factors come from the input that we will edit
 
 - **Exploring Variability Factors via CLI (Bonus)**  
-   - Provide instructions to use the command-line interface (CLI) to explore variability factors and their combinations:  
-     ```bash
+   - Provide instructions to use the command-line  
      python explore_variability.py --random-seed 42 --hardware GPU --dataset-version v1.1
      ```
    - Describe the functionality and parameters of the CLI:
