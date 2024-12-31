@@ -3,7 +3,13 @@
 
 ## Introduction
 
+This project focuses on the reproduction and replication of the research presented in the article "Debunking the Chessboard: Confronting GPTs Against Chess Engines to Estimate Elo Ratings and Assess Legal Move Abilitie" by Mathieu Acher. The original study aims to compute the Elo rating of different Generative Pretrained Transformers (GPTs) based on their performance in chess games, specifically evaluating their ability to make legal moves. The study explores how various GPT models, trained on large datasets, can be assessed using the Elo system, which is traditionally used to measure the relative skill of chess players.
 
+Our effort aims to reproduce the results presented in the original paper by carefully following the methodologies outlined by the author, while also addressing any potential challenges in replicating the experiments. By ensuring the reproducibility of the study's results, we aim to confirm the validity of the original findings and highlight any discrepancies or improvements that could be made.
+
+Furthermore, we aim to replicate the study under different conditions, considering various factors such as changes to the prompt or hyperparameters. This will allow us to assess the robustness and reliability of the results. The replication process will involve exploring how variations in these factors can affect the conclusions of the study, thereby testing the consistency of the findings across alternative setups.
+
+Through this project, we hope to contribute to the broader scientific discourse on reproducibility and replicability in machine learning research, and ensure that the methods and results presented in the original study are both reliable and generalizable.
 
 ## Reproducibility
 
@@ -39,24 +45,53 @@ We chose the second possibility to do the reproductibility experiments with the 
 There wasn't specific system requirements.
 
 2. **Setting Up the Environment**  
-   - Provide instructions for using the Dockerfile to create a reproducible environment:  
-     ```bash     docker build . -t project_repro ./base.Dockerfile
-     docker build . -t databuild ./databuild.Dockerfile
+  Docker is needed to reproduce the experiments. As Mathieu Acher advised us, we decided to focus on the reproducibility of the analysis of the data previously generated with GPTs by Mathieu Acher. First of all, you may clone our repositary with :
+    ```bash
+    git clone https://github.com/Vicalf/chess_rep_project_mh_vvk.git
+    ```
+    Enter the folder "chess_rep_project_mh_vvk" then check there is an "output" folder.
+
+    After that, you can build the two images needed for reproducibility. base.dockerfile creates an image with an updated-and-updated ubuntu in which python and required libraries are installed. It could last up to 5 minutes to build.
+
+    The second one (analysis.dockerfile) aims to use the first image and execute the jupyter-notebook-to-markdown conversion.
+
+    Make sure you don't have Docker images tagged with project_repro or analysis.
+
+    Execute these commands at the project root :
+     ```bash
+     docker build . -t project_repro ./base.Dockerfile
      docker build . -t analysis ./analysis.Dockerfile
      ```
 
 3. **Reproducing Results**  
-   - Describe how to run the automated scripts or notebooks to reproduce data and analyze results:
+   Once you runned the two previous commands, you can run the analysis on both Windows and Linux :
+   - In Windows Powershell :
      ```bash
-     docker run databuild -e "OPENAI_API_KEY=###HERE THE SECRET###"
-     docker run analysis
+     docker run --name jupyter_analysis -v ${PWD}\output:/output analysis
      ```
+  - In Linux shell :
+    ```bash
+     docker run --name jupyter_analysis -v $(pwd)/output:/output analysis
+    ```
+  You should find the analysis results in the output folder. There should be two relevant elements :
+  - analysis_files folder contains all medias generated in the analysis notebook
+  - analysis.md file shows the results of original notebook execution. Every results of Mathieu Acher should be retrievable in this file.
+
+  To re-run the analysis, you should :
+  - Save in another folder the current results
+  - Delete all files in `output` folder except .gitkeep
+  - Remove the docker container with `docker rm jupyter_analysis`
+  - Then follow the previous procedure 
     
 ### Encountered Issues and Improvements
 - Only part of the dependency were noted, and we thus needed to install more libs, and to downgrade some of them
 - The selection of the right docker image was not easy, because the python image was not able to use apt and to install certain packages
 
 ### Is the Original Study Reproducible?
+
+We compared analysis.md results with figures given by Mathieu Acher in his article in order to see if the experiments were reproducible.
+
+As the final ELO values were the same in the analysis.md file and Mathieu Acher's article 
 - The original study seems to be reproductible
 
 ## Replicability
