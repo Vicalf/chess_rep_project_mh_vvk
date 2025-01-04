@@ -1,5 +1,5 @@
 # Project REP : Reproductibility and Replicabily of chess experiments
-*Authors : Matthieu Hillairet, Victor van  Kempen*
+*Authors : Matthieu Hillairet, Victor van Kempen*
 
 ## Introduction
 
@@ -84,17 +84,26 @@ There wasn't specific system requirements.
   - Then follow the previous procedure 
     
 ### Encountered Issues and Improvements
-- Only part of the dependency were noted, and we thus needed to install more libs, and to downgrade some of them
-- The selection of the right docker image was not easy, because the python image was not able to use apt and to install certain packages
+
+Several issues were faced during the project.
+
+Firstly, only part of the dependency were given in the README of Mathieu Acher's project. Consequenlty running the analysis was initially impossible. Thus we needed to install more libraries which we put in the `requirements.txt` file.
+
+Moreover, some librairies were asked to install without giving clear information on the needed version. Mathieu Acher's analysis used methods which are unsupported or deprecated in the most recent libraries versions. Thus we had to downgrade some of them. In our markdown result file, we can see many warnings about the use of deprecated method. We decided not to edit the code in the reproducibility part, but it can be improved to have a clearer vision of the results.
+
+Finally, the choice of the right docker image was difficult, because the python image was not able to use apt and to install some packages. That's why we installed python and libraries "from scratch" on the ubuntu image after updating and upgrading it.
 
 ### Is the Original Study Reproducible?
 
 We compared analysis.md results with figures given by Mathieu Acher in his article in order to see if the experiments were reproducible.
 
-As the final ELO values were the same in the analysis.md file and Mathieu Acher's article 
-- The original study seems to be reproductible
+As the final ELO values were approximately the same in the analysis.md file and Mathieu Acher's article, we concluded that the original study seemed to be reproducible.
 
-## Replicability
+For the reproduction phase, we also tried to regenerate the same outputs from the base prompt. However, due to the randomness of the process, this was not feasible. We decided to focus instead on generating new outputs for replication.
+
+Even when adding new components or using alternative ones with the same format, the study remains reproducible. The analysis framework easily supports these additions, ensuring that the results obtained continue to align with the original findings and lead in the same direction.
+
+# Replicability
 
 ### Variability Factors
 - **List of Factors**: We identify the factor of variability described here : 
