@@ -106,34 +106,51 @@ Even when adding new components or using alternative ones with the same format, 
 # Replicability
 
 ### Variability Factors
-- **List of Factors**: We identify the factor of variability described here : 
+- **List of Factors**:
+
+We identify the factor of variability described here : 
+
   | Variability Factor | Possible Values        | Relevance                                             |
   |--------------------|---------------------   |-------------------------------------------------------|
   | LLM family         | [gpt, llama, mistral]  | May change the training process                       |
   | LLM version        | depends on family      | May change the training process                       |
-  | input formulation  | TBD                    | May change the way of understanding question for LLM  |
-  | color played       | [white, black]         | May change the ELO computed                           |
-  | ELO prompted LLM   | [800 -> 1500]          | May change the power of the model                     |
-  | ELO prompted other | [800 -> 1500]          | May make the battle harder                            |
-  | player name prompted| ["", famous chess player, random] | may change the perception of the adversary and of itself |
+  | input formulation  | "answer me with PGN notation"                    | May change the way of understanding question for LLM. |
+  | game metadata given to LLM | [color played, ELO, ... (see below)] | see below depending on the metadata |
+  | color played       | [white, black]         | May change the moves played by the model                          |
+  | ELO prompted LLM   | [0 -> 3000]          | May influence LLM moves played (higher ELO => better moves)                |
+  | ELO prompted opponent | [0 -> 3000]          | May influence LLM moves played (higher ELO => worse moves)                     |
+  | player name prompted| ["", famous chess player, random] | May change the perception of the adversary and of itself |
   | winner prompted     | ["0-1","1-0","1-1"]    | May change the way of playing                         |
+  | opponent type |[LLM, chess engine, human]|What does happen if 2 LLM play together ? |
   | chess engine       | Stockfish, AlphaZero, Komodo Chess  | May not play the same move, and trigger different reactions |
-  | temperature        | [0 -> 1 ]             | May enable more illegal moves                          |
-  We think that each of these factor can then affect the computation of the ELO value.
+  | ELO / real level of chess engine | [0 -> 3000] | Better opponent may make LLM play better moves |
+  | temperature        | [0 -> 1]             | May increase number of illegal moves        
+  |way to manage LLM illegal move | [correct the illegal move, consider LLM defeat] | may learn to the LLM not to make some mistakes during the same game                 |
+
+  We think that each of these factor can then affect the computation of the ELO value thus the conclusions of Mathieu Acher's study.
+
+  We can theoretically apply all these factor to the initial experiment.
 
 - **Constraints Across Factors**:  
-  - Some factors are linked together
-    - temparature, and LLM version are linked in their meaning to the LLM family.
-    - multiple factors come from the input that we will edit
 
-- **Exploring Variability Factors via CLI (Bonus)**  
-   - Provide instructions to use the command-line  
-     python explore_variability.py --random-seed 42 --hardware GPU --dataset-version v1.1
-     ```
-   - Describe the functionality and parameters of the CLI:
-     - `--random-seed`: Specify the random seed to use.
-     - `--hardware`: Choose between CPU or GPU.
-     - `--dataset-version`: Select the dataset version.
+**1. Interrelated Factors**  
+
+**a) Choice of LLM and Version:**  
+The selection of the LLM family (e.g., GPT, Llama, Mistral) and its version serves as a preliminary step. This choice influences all subsequent decisions regarding hyperparameters, as these parameters are inherently tied to the capabilities and constraints of the specific LLM.  
+
+**b) Prompt Formulation:**  
+Factors related to prompt design, such as the phrasing of the message (e.g., "answer me with PGN notation"), the type of interaction, and metadata (e.g., color played, ELO, or PGN metadata), are grouped together. They collectively shape how the LLM interprets and responds to the task.  
+
+**c) Hyperparameters:**  
+Parameters such as temperature, how illegal moves are managed, and the configuration of the API requests belong to this group. They directly impact the LLM's output behavior and need to be adjusted in alignment with the selected LLM family and version.  
+
+**2. Conditional Accessibility of Factors**  
+
+**a) Experimental Feasibility:**  
+Some factors are accessible only under specific conditions. For instance, conducting experiments at scale requires the LLM to have API access to play a large number of games. This is critical for both the initial study and replication efforts.  
+
+**b) Scalability for Replication:**  
+To ensure replicability, experiments must be designed with practical execution in mind. This includes leveraging APIs for large-scale testing and ensuring that the selected configurations and factors are feasible to implement across many trials.  
 
 
 ### Replication Execution
