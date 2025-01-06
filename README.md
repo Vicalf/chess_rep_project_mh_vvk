@@ -59,8 +59,8 @@ There wasn't specific system requirements.
 
     Execute these commands at the project root :
      ```bash
-     docker build . -t project_repro ./base.Dockerfile
-     docker build . -t analysis ./analysis.Dockerfile
+     docker build . -t project_repro -f ./base.Dockerfile
+     docker build . -t analysis -f ./analysis.dockerfile
      ```
 
 3. **Reproducing Results**  
@@ -155,14 +155,18 @@ To ensure replicability, experiments must be designed with practical execution i
 
 ### Replication Execution
 1. **Instructions**  
-   - Provide detailed steps or commands for running the replication(s):  
+   
      ```bash
-     bash scripts/replicate_experiment.sh
+     python gptchess/gpt-experiments.py
      ```
 
-2. **Presentation and Analysis of Results**  
-   - Include results in text, tables, or figures.
-   - Analyze and compare with the original study's findings.
+### Encountered Issues
+
+1. **Docker execution**
+En principe, on devrait pouvoir 
+
+2. **Game configurations multiplicity**
+
 
 ### Does It Confirm the Original Study?
 - Summarize the extent to which the replication supports the original study’s conclusions.

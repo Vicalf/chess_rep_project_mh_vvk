@@ -43,7 +43,10 @@ BASE_PGN = """[Event "FIDE World Championship Match 2024"]
 
 
 def setup_directory():
-    OUTPUT_DIR = "games/"
+    if os.getenv('outputDir'):
+        OUTPUT_DIR = os.getenv('outputDir')
+    else:
+        OUTPUT_DIR = "games/"
     dir_name = OUTPUT_DIR + "game" + str(uuid.uuid4())
     os.makedirs(dir_name, exist_ok=True)
     return dir_name
@@ -474,7 +477,7 @@ BASE_PGN_HEADERS_ALTERED =  """[Event "Chess tournament"]
 
 # Create instances of ChessEngineConfig and GPTConfig using the provided parameters.
 chess_config = ChessEngineConfig(
-    skill_level=6,
+    skill_level=2,
     engine_depth=15,
     engine_time=None,
     random_engine=False
@@ -498,8 +501,8 @@ YOSHA_PGN = """[White "Carlsen, Magnus"]
 
 
 # Call the refactored function.
-for t in [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0]:
-    for i in range(1):
+for t in [00,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0]:
+    for i in range(10):
         print("t = "+str(t))
         gpt_config = GPTConfig(
             model_gpt="gpt-3.5-turbo-instruct",
