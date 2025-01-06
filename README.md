@@ -65,11 +65,6 @@ There wasn't specific system requirements.
 
 3. **Reproducing Results**  
    Once you runned the two previous commands, you can run the analysis on both Windows and Linux :
-   - In Windows Powershell :
-     ```bash
-     docker run --name jupyter_analysis -v ${PWD}\output:/output analysis
-     ```
-  - In Linux shell :
     ```bash
      docker run --name jupyter_analysis -v $(pwd)/output:/output analysis
     ```
@@ -121,11 +116,11 @@ We identify the factor of variability described here :
   | ELO prompted opponent | [0 -> 3000]          | May influence LLM moves played (higher ELO => worse moves)                     |
   | player name prompted| ["", famous chess player, random] | May change the perception of the adversary and of itself |
   | winner prompted     | ["0-1","1-0","1-1"]    | May change the way of playing                         |
-  | opponent type |[LLM, chess engine, human]|What does happen if 2 LLM play together ? |
+  | opponent type |[LLM, chess engine, human]|What docoherentes happen if 2 LLM play together ? |
   | chess engine       | Stockfish, AlphaZero, Komodo Chess  | May not play the same move, and trigger different reactions |
   | ELO / real level of chess engine | [0 -> 3000] | Better opponent may make LLM play better moves |
   | temperature        | [0 -> 1]             | May increase number of illegal moves        
-  |way to manage LLM illegal move | [correct the illegal move, consider LLM defeat] | may learn to the LLM not to make some mistakes during the same game                 |
+  |way to manage LLM illegal move | [correct the illegal move, consider LLM defeat] | may learn to the LLM not to make some mistakes during the same game                 |coherent
 
   We think that each of these factor can then affect the computation of the ELO value thus the conclusions of Mathieu Acher's study.
 
@@ -154,24 +149,86 @@ To ensure replicability, experiments must be designed with practical execution i
 
 
 ### Replication Execution
-1. **Instructions**  
-   
+1. **Setting Up the Environment**  
+  Given you followed step to reproduce the experiment, you should have the image named project_repro, which will be used in images for replication. You then only have to build images databuild and jupyter-replication
+
      ```bash
-     python gptchess/gpt-experiments.py
+     docker build . -t databuild -f ./datauild.dockerfile
+     docker build . -t jupyter-replication -f ./replicatio.Dockerfile
+     export OPENAI_API_KEY=[[YOUR OPENAI API KEY]]
      ```
+2. **Data building** 
+
+  You can generate new data to be added to previously generated.
+    ```bash
+    docker run -e OPENAI_API_KEY=$OPENAI_API_KEY -e outputDir=games-repro/ -v $(pwd)/games-repro:/app/games-repro databuild
+    ```
+  This will execute gptchess/gpt-experiment.py. Currently, it generates 11 new games, one for each tested temperature (0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9 and 1.0)
+  Each parameter can be edited in the file gptchess/gpt-experiment.py : stockfish level, temperature, etc)
+
+3. **Replication analysis execution**
+
+  Analysis can be launched with the command:
+    ```bash
+    docker run -v $(pwd)/output:/output jupyter-replication
+    ```
+  You should find the analysis results in the output/replication folder. There should be two relevant elements :
+  - analysis_files folder contains all medias generated in the analysis notebook
+  - analysis.md file shows the results of notebook execution.
 
 ### Encountered Issues
 
 1. **Docker execution**
-En principe, on devrait pouvoir 
+
+For an unknown reason, the execution of the databuild container only displays the standard output after it has fully completed, including the "print" statements executed during the process.
+For several weeks, we thought it wasn't working since it took about ten minutes to show any results.
 
 2. **Game configurations multiplicity**
 
+In order to conduct a consistent analysis, we thought that we needed games coherent, meaning the data used shall only vary on the studied criteria (here, the temperature)
+Given that the existent dataset contains games with multiple factors varying, we couldn't use all these games. We thus extracted only games where random_engine = false, PGNpromt is basePGNprompt, white player is stockfish and black player is gpt3.5 turbo. This way, we ensure that the player color, the randomness, the PGN prompt, and the adversary don't influence the results.
+The only variable that remains is the skill level of Stockfish : Stockfish has different elo depending on the game. We think that this factor will not influence the result too much since the elo score computation use the mean of elo scores of adversaries.
 
-### Does It Confirm the Original Study?
-- Summarize the extent to which the replication supports the original study’s conclusions.
-- Highlight similarities and differences, if any.
+### Impact of the temperature on the illegal moves
+- From the cell [13], we have :
+| temperature |  percentage of games with illegal moves |
+|:------------|----------------------------------------:|
+| 0.0         |                                  23.61% |
+| 0.1         |                                  17.86% |
+| 0.2         |                                  35.71% |
+| 0.3         |                                  17.86% |
+| 0.4         |                                  53.57% |
+| 0.5         |                                  39.29% |
+| 0.6         |                                  35.71% |
+| 0.7         |                                  57.14% |
+| 0.8         |                                  66.67% |
+| 0.9         |                                  59.57% |
+| 1.0         |                                  66.67% |
+We clearly see that the higher the temperature is set, the more illegal move the LLM give
+
+When we look more deeply into the illegal moves made by the LLM, we see that, regardless of the temperature, the majority of these moves are "1-0" These could arguably not be considered illegal moves per se but rather a forfeit by the LLM (Black player). This hypothesis is further confirmed in cell [15], where we observe that in all the games where these "1-0" outcomes occurred, Stockfish appeared to have the advantage (121 cases out of 123).
+
+### Impact of the temperature on the elo rating
+
+Given the results in the last cell, we see that the two computations are consistent, (curves are almost one on the other). However, it seems that the elo is clearly decreasing when the temperature increase higher than 0.2. It seems then that the elo of gpt-3.5-turbo-instruct is better with some temperature (around t = 0.2). 
+However we should be careful and try to redo the experience with same number of game for each Stockfish skill level with each temperature, since for now, t=0.0 have many more games with stockfish varying skill levels 
 
 ## Conclusion
-- Recap findings from the reproducibility and replicability sections.
-- Discuss limitations of your
+
+### Discussion
+
+Through this project, we successfully reproduced key findings from Mathieu Acher's study on evaluating GPT models in chess experiments. Our work confirmed the reproducibility of the original study's results, particularly the Elo ratings and the assessment of illegal moves, despite some initial challenges such as dependency management and Docker setup.
+
+The replication analysis revealed that the temperature parameter significantly impacts both the frequency of illegal moves and the Elo performance of GPT-3.5-turbo-instruct. Higher temperatures led to an increased rate of illegal moves, often manifesting as "1-0" forfeits rather than rule violations, further supporting the hypothesis of GPT's difficulty under adversarial pressure. Conversely, Elo ratings were highest at lower temperatures, peaking around 0.2 before decreasing as temperature increased.
+
+While our results align with the original findings, certain limitations, such as variability in Stockfish skill levels and unequal game counts across temperature settings, highlight areas for improvement in experimental design. Ensuring consistent conditions across all tests would allow for more robust conclusions.
+
+Overall, this work demonstrates the importance of reproducibility and replicability in machine learning research. By validating Acher's findings and exploring alternative configurations, we provide valuable insights into the behavior of GPT models in chess experiments and contribute to the broader discourse on experimental reliability in AI studies.
+
+### Limitation of the Subject
+
+The chosen article is well-detailed and, as a result, highly reproducible. The inclusion of tools such as the Jupyter notebook significantly facilitated the reproduction process, allowing us to navigate the experiments with relative ease. However, we encountered notable challenges, particularly when it came to drawing comprehensive conclusions, especially during the replication phase.
+
+A significant limitation lies in the absence of a singular, clearly defined target result. Instead, the study produces multiple diverse outputs that need to be analyzed. While this provides a broader understanding of the subject, it also complicates the task of systematically comparing individual results across different factors. This is particularly critical in the replication phase, where the objective is to explore the variability of outcomes under different conditions. The lack of a unified benchmark makes it difficult to fully assess the impact of individual factors or reach definitive conclusions.
+
+These challenges underline the importance of designing experiments with clear, interpretable metrics that facilitate consistent comparisons. While the article provided an excellent foundation for reproduction, future work could benefit from a more structured framework to evaluate results, particularly when analyzing the effects of various parameters in replication studies.
