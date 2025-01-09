@@ -64,7 +64,7 @@ There wasn't specific system requirements.
      ```
 
 3. **Reproducing Results**  
-   Once you runned the two previous commands, you can run the analysis on both Windows and Linux :
+   Once you runned the two previous commands, you can run the analysis on Linux (because Windows file system has different syntax) :
     ```bash
      docker run --name jupyter_analysis -v $(pwd)/output:/output analysis
     ```
@@ -153,8 +153,8 @@ To ensure replicability, experiments must be designed with practical execution i
   Given you followed step to reproduce the experiment, you should have the image named project_repro, which will be used in images for replication. You then only have to build images databuild and jupyter-replication
 
      ```bash
-     docker build . -t databuild -f ./datauild.dockerfile
-     docker build . -t jupyter-replication -f ./replicatio.Dockerfile
+     docker build . -t databuild -f ./databuild.dockerfile
+     docker build . -t jupyter-replication -f ./replication.Dockerfile
      export OPENAI_API_KEY=[[YOUR OPENAI API KEY]]
      ```
 2. **Data building** 
@@ -164,7 +164,7 @@ To ensure replicability, experiments must be designed with practical execution i
     docker run -e OPENAI_API_KEY=$OPENAI_API_KEY -e outputDir=games-repro/ -v $(pwd)/games-repro:/app/games-repro databuild
     ```
   This will execute gptchess/gpt-experiment.py. Currently, it generates 11 new games, one for each tested temperature (0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9 and 1.0)
-  Each parameter can be edited in the file gptchess/gpt-experiment.py : stockfish level, temperature, etc)
+  Each parameter can be edited in the file gptchess/gpt-experiment.py : stockfish level, temperature, etc.
 
 3. **Replication analysis execution**
 
@@ -191,6 +191,7 @@ The only variable that remains is the skill level of Stockfish : Stockfish has d
 
 ### Impact of the temperature on the illegal moves
 - From the cell [13], we have :
+
 | temperature |  percentage of games with illegal moves |
 |:------------|----------------------------------------:|
 | 0.0         |                                  23.61% |
@@ -204,11 +205,12 @@ The only variable that remains is the skill level of Stockfish : Stockfish has d
 | 0.8         |                                  66.67% |
 | 0.9         |                                  59.57% |
 | 1.0         |                                  66.67% |
+
 We clearly see that the higher the temperature is set, the more illegal move the LLM give
 
 When we look more deeply into the illegal moves made by the LLM, we see that, regardless of the temperature, the majority of these moves are "1-0" These could arguably not be considered illegal moves per se but rather a forfeit by the LLM (Black player). This hypothesis is further confirmed in cell [15], where we observe that in all the games where these "1-0" outcomes occurred, Stockfish appeared to have the advantage (121 cases out of 123).
 
-### Impact of the temperature on the elo rating
+### Impact of the temperature on the ELO rating
 
 Given the results in the last cell, we see that the two computations are consistent, (curves are almost one on the other). However, it seems that the elo is clearly decreasing when the temperature increase higher than 0.2. It seems then that the elo of gpt-3.5-turbo-instruct is better with some temperature (around t = 0.2). 
 However we should be careful and try to redo the experience with same number of game for each Stockfish skill level with each temperature, since for now, t=0.0 have many more games with stockfish varying skill levels 
